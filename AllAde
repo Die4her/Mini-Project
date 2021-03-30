@@ -1,0 +1,65 @@
+package p2;
+
+public class AllAde {
+	//에이드 판매수량
+	int adecnt;
+	
+	//에이드 포인트 누적
+	double point;
+	
+	//에이드 가격
+	int price;
+		
+	public AllAde(int adecnt) {
+		this.price = price;
+		this.point = (price * 0.1);
+
+
+	}
+
+}
+
+class Grape extends AllAde{
+
+	public Grape() {
+		super(4500);
+
+	}
+	
+	@Override
+	public String toString() {
+		return "청포도에이드";
+	}
+
+}
+
+class Strawberry extends AllAde{
+
+	public Strawberry() {
+		super(4400);
+
+	}
+	
+	@Override
+	public String toString() {
+		return "딸기에이드";
+	}
+
+}
+
+class Lemon extends AllAde{
+
+	public Lemon() {
+		super(4200);
+
+	}
+	
+	@Override
+	public String toString() {
+		return "레몬에이드";
+	}
+
+}
+
+
+
