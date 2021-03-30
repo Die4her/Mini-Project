@@ -1,0 +1,62 @@
+public class AllCoffee {
+	
+	//커피 판매수량
+	int coffeecnt=0;
+	
+	//커피 포인트 누적
+	double point;
+	
+	//커피 가격
+	int price;
+
+	
+	
+	public AllCoffee(int coffeecnt) {
+		this.price = price;
+		this.point = (price * 0.1);
+	}
+
+}
+
+class Latte extends AllCoffee{
+
+	public Latte() {
+		super(3200);
+
+	}
+	
+	@Override
+	public String toString() {
+		return "카페라떼";
+	}
+
+}
+
+class Vanilla extends AllCoffee{
+
+	public Vanilla() {
+		super(3700);
+
+	}
+	
+	@Override
+	public String toString() {
+		return "바닐라 라떼";
+	}
+
+}
+
+class Mocha extends AllCoffee{
+
+	public Mocha() {
+		super(4200);
+
+	}
+	
+	@Override
+	public String toString() {
+		return "카페 모카";
+	}
+
+}
+
