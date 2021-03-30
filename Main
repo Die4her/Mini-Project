@@ -46,7 +46,7 @@ public class Main {
 		
 	}
 	
-
+        //입력 처리하는 두번째 메소드
 	private static void input2() {
 		System.out.print("어떤 메뉴를 선택하시겠어요??");
 		System.out.print("1. 아메리카노 (2000) | 2. 바닐라 라떼 (3000) | 3. 카페모카 (3500)");
