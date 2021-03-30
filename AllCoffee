@@ -11,7 +11,7 @@ public class AllCoffee {
 
 	
 	
-	public AllCoffee(int coffeecnt) {
+	public AllCoffee(int price) {
 		this.price = price;
 		this.point = (price * 0.1);
 	}
