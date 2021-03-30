@@ -15,7 +15,7 @@ public class AllSmoothie {
 	int PlumPrice;
 	int PeachPrice;
 		
-		public AllSmoothie(int smoothiecnt) {
+		public AllSmoothie(int price) {
 			this.price = price;
 			this.point = (price * 0.1);
 	
