@@ -10,7 +10,7 @@ public class AllAde {
 	//에이드 가격
 	int price;
 		
-	public AllAde(int adecnt) {
+	public AllAde(int price) {
 		this.price = price;
 		this.point = (price * 0.1);
 
