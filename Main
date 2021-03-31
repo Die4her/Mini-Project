@@ -1,75 +1,229 @@
 package p2;
 
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.security.AllPermission;
 import java.util.Scanner;
 
-import p1.Branch;
-
 public class Main {
-	public Main() {
-		Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) throws IOException {
+		// BufferdReader 는 Scanner와 똑같은 기능을 합니다
+		// = 사용자에게 입력을 받기
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));// 매장주문
+		BufferedReader bt = new BufferedReader(new InputStreamReader(System.in));// 포장주문
 
-		int selectMenu; //1.입력 2.출력 3.종료 선택하는 변수
-
-		
-		
-		//첫 화면 출력 
+		// 계산하는 클래스인 Manager를 불려와 객체 생성
+		// 객체 생성을 해줘야 그 클래스를 불러서 사용할 수가 있습니다
+		Manager m1 = new Manager();
+		Manager1 m2 = new Manager1();
+		// 번호를 입력받을 변수 설정
+		int act, act1;
+		int act2, act3;
+		// while의 무한 반복을 정지시켜줄 변수 설정
+		// 기본값을 true로 주고, false가 되면 멈추도록 합니다
 		boolean flag = true;
-		do {
-			System.out.println("--------------");
-			System.out.println("커피 주문관리 프로그램");
-			System.out.println("--------------");
-			System.out.println(" 1.입력 2.출력 3.종료 ");
-			System.out.print("번호를 선택해주세요 ");
-			selectMenu = sc.nextInt();
-			switch(selectMenu) {
-			case 1: input(); break; // 입력하기
-			case 2: output(); break; //출력하기
-			case 3: flag = false; //종료하기
 
+		// 실행시 메인화면
+		System.out.println("-------------");
+		System.out.println("카페 관리 프로그램");
+		System.out.println("-------------");
+		System.out.println("1.매장 주문 | 2.포장주문");
+		//사용자에게 번호를 입력받아 변수 act에 저장합니다
+		System.out.print(">>");
+		act = Integer.parseInt(br.readLine());
+		act2 = Integer.parseInt(br.readLine());
+
+		// while(true)는 무한반복을 합니다
+		// 위에서 flag변수에 true값을 넣어줬으니 이것도 flag 변수가 false값으로 변하기 전까지는 무한반복
+		while (flag) {
+			// 위에서 사용자가 입력한 번호를 act가 저장해놨고
+			// switch()에 넣어줬습니다.
+			// act에 따라 case 1,2,3... 이 선택되는것
+			switch (act) {
+			// 사용자가 1번을 눌렀다면 실행되는 곳
+			case 1:
+				System.out.println();
+				System.out.println("1.커피 | 2. 스무디 | 3. 에이드");
+				System.out.print(">>");
+				// 사용자에게 입력을 받습니다
+				act1 = Integer.parseInt(br.readLine());
+
+				// 사용자가 입력한 숫자에 따라 출력되는 곳
+				if (act1 == 1) {
+					System.out.println("1. 카페라떼 | 2. 바닐라라떼 | 3.카페모카");
+					System.out.print(">>");
+					act = Integer.parseInt(br.readLine());
+					if (act1 == 1) {
+						m1.coffeeInput(new Latte());
+						// 매니져 클래스를 보면
+						// 사용자에게 추가주문이 있는지 묻고 Y/N을 입력받습니다
+						// 만약 사용자가 N를 입력했다면 flag가 false로 변하고
+						// while 반복문이 정지됩니다.
+						flag = m1.flag;;
+						break;
+					} else if (act1 == 2) {
+						m1.coffeeInput(new Vanilla());
+						flag = m1.flag;
+						break;
+					} else if (act1 == 3) {
+						m1.coffeeInput(new Mocha());
+						flag = m1.flag;
+						break;
+					} else {
+						continue;
+					}
+				} else if (act1 == 2) {
+					System.out.println("1. 요거트 | 2. 복숭아 | 3. 자두");
+					System.out.print(">>");
+					act1 = Integer.parseInt(br.readLine());
+					if (act1 == 1) {
+						m1.smoothieInput(new Yogurt());
+						flag = m1.flag;
+						break;
+					} else if (act1 == 2) {
+						m1.smoothieInput(new Peach());
+						flag = m1.flag;
+						break;
+					} else if (act1 == 3) {
+						m1.smoothieInput(new Plum());
+						flag = m1.flag;
+						break;
+					} else {
+						continue;
+					}
+				} else if (act1 == 3) {
+					System.out.println("1. 청포도 | 2. 딸기 | 3. 레몬 ");
+					System.out.print(">>");
+					act1 = Integer.parseInt(br.readLine());
+					if (act1 == 1) {
+						m1.adeInput(new Grape());
+						flag = m1.flag;
+						break;
+					} else if (act1 == 2) {
+						m1.adeInput(new Strawberry());
+						flag = m1.flag;
+						break;
+					} else if (act1 == 3) {
+						m1.adeInput(new Lemon());
+						flag = m1.flag;
+						break;
+					} else {continue;}
+				} else {	}
+
+				// 여기는 메인에서 2번을 선택했을 시 출력되는 클래스 입니다.
+				// 아직 구현하지 못한 기능이기 때문에 임시로 작성하였습니다.
+
+				while (flag) {
+					// 위에서 사용자가 입력한 번호를 act가 저장해놨고
+					// switch()에 넣어줬습니다.
+					// act에 따라 case 1,2,3... 이 선택되는것
+					switch (act2) {
+					// 사용자가 2번을 눌렀다면 실행되는 곳
+					case 1:
+						System.out.println();
+						System.out.println("포장주문은 모든 메뉴 500원 추가입니다.");
+						System.out.println("1.커피 | 2. 스무디 | 3. 에이드");
+						System.out.print(">>");
+						// 사용자에게 입력을 받습니다
+						act3 = Integer.parseInt(bt.readLine());
+
+						// 사용자가 입력한 숫자에 따라 출력되는 곳
+						if (act3 == 1) {
+							System.out.println("1. 카페라떼 | 2. 바닐라라떼 | 3.카페모카");
+							System.out.print(">>");
+							act2 = Integer.parseInt(br.readLine());
+							if (act3 == 1) {
+								m2.coffeeInput(new Latte());
+								// 매니져 클래스를 보면
+								// 사용자에게 추가주문이 있는지 묻고 Y/N을 입력받습니다
+								// 만약 사용자가 N를 입력했다면 flag가 false로 변하고
+								// while 반복문이 정지됩니다.
+								flag = m2.flag;;
+								break;
+							} else if (act1 == 2) {
+								m1.coffeeInput(new Vanilla());
+								flag = m2.flag;
+								break;
+							} else if (act1 == 3) {
+								m1.coffeeInput(new Mocha());
+								flag = m2.flag;
+								break;
+							} else {
+								continue;
+							}
+						} else if (act3 == 2) {
+							System.out.println("1. 요거트 | 2. 복숭아 | 3. 자두");
+							System.out.print(">>");
+							act3 = Integer.parseInt(br.readLine());
+							if (act3 == 1) {
+								m2.smoothieInput(new Yogurt());
+								flag = m2.flag;
+								break;
+							} else if (act3 == 2) {
+								m1.smoothieInput(new Peach());
+								flag = m2.flag;
+								break;
+							} else if (act3 == 3) {
+								m1.smoothieInput(new Plum());
+								flag = m2.flag;
+								break;
+							} else {
+								continue;
+							}
+						} else if (act3 == 3) {
+							System.out.println("1. 청포도 | 2. 딸기 | 3. 레몬 ");
+							System.out.print(">>");
+							act3 = Integer.parseInt(br.readLine());
+							if (act3 == 1) {
+								m1.adeInput(new Grape());
+								flag = m2.flag;
+								break;
+							} else if (act3 == 2) {
+								m1.adeInput(new Strawberry());
+								flag = m2.flag;
+								break;
+							} else if (act3 == 3) {
+								m2.adeInput(new Lemon());
+								flag = m2.flag;
+								break;
+							} else {continue;}
+						} else {	}
+					case 2:
+						System.out.println("-------------------");
+						System.out.println("구매하신 음료 수 : " + hap1);
+						System.out.println("결제하실 금액 : " + (int) m2.money + "원");
+						System.out.println("누적 포인트 : " + (int) m2.point + " point");
+						System.out.println("구매해주셔서 감사합니다");
+						br.close();
+						System.exit(0);
+						// 위를 출력 후 강제로 act에 숫자 1을 집어넣어
+						// 매장 주문 쪽으로 들어갑니다
+						act = 1;
+						continue;
+					}
+				}
+				// 모든 반복문이 끝난 후 출력되는 클래스 입니다!
+				// 그동안 누적했던 가격을 출력해줘야하니
+				// 변수를 하나 설정하고 매니져에 있을 누적값들을 불러오고
+				// 그 값을 계산에 hap 이라는 변수에 넣어줍니다
+				int hap = m1.allCoffeeCnt + m1.allAdeCnt + m1.allSmoothieCnt;
+				int hap1 = m2.allCoffeeCnt1 + m2.allAdeCnt1 + m2.allSmoothieCnt1;
+
+				// 마지막 출력화면입니다
+				// 구매한 음료의 갯수와
+				// 결제할 금액
+				// 누적된 포인트
+				// 마지막 인사
+				System.out.println("-------------------");
+				System.out.println("구매하신 음료 수 : " + hap);
+				System.out.println("결제하실 금액 : " + (int) m1.money + "원");
+				System.out.println("누적 포인트 : " + (int) m1.point + " point");
+				System.out.println("구매해주셔서 감사합니다");
+				br.close();
+				System.exit(0);
 			}
-
-		}while(flag);
-
-	} //main 메소드 끝
-
-	//입력 처리하는 메소드
-	private static void input() {
-		boolean flag = true;
-	
-		do {
-			System.out.println("어떤 종류를 주문하시겠어요??");
-			System.out.println("1.커피 2.에이드 3.스무디 ");
-
-			
-		}while(flag);
-		System.out.println("추가로 주문하시겠습니까?(y/n) ");
-		
-	}
-	
-        //입력 처리하는 두번째 메소드
-	private static void input2() {
-		System.out.print("어떤 메뉴를 선택하시겠어요??");
-		System.out.print("1. 아메리카노 (2000) | 2. 바닐라 라떼 (3000) | 3. 카페모카 (3500)");
-		
-	}
-	
-	private static void input3() {
-		System.out.print("몇 잔 주문하시겠어요??");
-	}
-	
-	
-
-	//출력 처리하는 메소드
-	private static void output() {
-		System.out.println("선택하신 메뉴 : ");
-		System.out.println("결제하실 금액 : ");
-		System.out.println("추가로 주문하시겠습니까? (Y/N)");
-		System.out.println("지사명 제품명 제품가격 판매량 매출현황");
-		System.out.println();
-		System.out.println("-> N 선택시 프로그램 종료");
-		System.out.println("-> Y 선택시 다시 메뉴선택으로 넘어감");
+		}
 	}
 }
-
-
-1
