@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 // 매니저 관리
 public class Manager1 extends Main{
 	boolean flag = true;
-	// 총 매출액ㅡㅁ
+	// 총 매출액
 	int money;
 	double point;
 	// 횟수 세기
@@ -37,7 +37,7 @@ public class Manager1 extends Main{
 
 		int cPoint = (int) (coffeeCnt1 * p.point);
 		point += (p.point * coffeeCnt1);
-		money += (p.price * coffeeCnt1);
+		money += ((p.price * coffeeCnt1)+500);
 
 		System.out.printf("선택하신 제품 : %s | 구매 수량 : %d | 예상 누적 포인트 : %d", p, coffeeCnt1, cPoint);
 		System.out.println();
