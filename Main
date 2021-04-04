@@ -228,7 +228,7 @@ public class Main {
 			// 마지막 인사
 			System.out.println("-------------------");
 			System.out.println("구매하신 음료 수 : " + hap1);
-			System.out.println("결제하실 금액 : " + (int) m2.money + "원");
+			System.out.println("결제하실 금액 : " + (int) m2.money +500 + "원");
 			System.out.println("누적 포인트 : " + (int) m2.point + " point");
 			System.out.println("구매해주셔서 감사합니다");
 			bt.close();
