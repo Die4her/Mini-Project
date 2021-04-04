@@ -111,18 +111,18 @@ public class Main {
 						flag = m1.flag;
 						break;
 					} else {continue;}
-				} else {	}
+				}
+				else {	}
 
 				// 여기는 메인에서 2번을 선택했을 시 출력되는 클래스 입니다.
 				// 아직 구현하지 못한 기능이기 때문에 임시로 작성하였습니다.
 				
 				int hap1 = m2.allCoffeeCnt1 + m2.allAdeCnt1 + m2.allSmoothieCnt1;
 
-				while (flag) {
 					// 위에서 사용자가 입력한 번호를 act가 저장해놨고
 					// switch()에 넣어줬습니다.
 					// act에 따라 case 1,2,3... 이 선택되는것
-					switch (act) {
+				
 					// 사용자가 2번을 눌렀다면 실행되는 곳
 					case 2:
 						System.out.println();
@@ -195,8 +195,8 @@ public class Main {
 							} else {continue;}
 						} else {	}
 				
-					}
-				}
+					
+				
 				// 모든 반복문이 끝난 후 출력되는 클래스 입니다!
 				// 그동안 누적했던 가격을 출력해줘야하니
 				// 변수를 하나 설정하고 매니져에 있을 누적값들을 불러오고
@@ -228,8 +228,8 @@ public class Main {
 			// 마지막 인사
 			System.out.println("-------------------");
 			System.out.println("구매하신 음료 수 : " + hap1);
-			System.out.println("결제하실 금액 : " + (int) m1.money + "원");
-			System.out.println("누적 포인트 : " + (int) m1.point + " point");
+			System.out.println("결제하실 금액 : " + (int) m2.money + "원");
+			System.out.println("누적 포인트 : " + (int) m2.point + " point");
 			System.out.println("구매해주셔서 감사합니다");
 			bt.close();
 			System.exit(0);
