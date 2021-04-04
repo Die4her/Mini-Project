@@ -179,7 +179,7 @@ public class Main {
 						} else if (act1 == 3) {
 							System.out.println("1. 청포도 | 2. 딸기 | 3. 레몬 ");
 							System.out.print(">>");
-							act3 = Integer.parseInt(br.readLine());
+							act = Integer.parseInt(br.readLine());
 							if (act1 == 1) {
 								m2.adeInput(new Grape());
 								flag = m2.flag;
@@ -194,18 +194,7 @@ public class Main {
 								break;
 							} else {continue;}
 						} else {	}
-					case 3:
-						System.out.println("-------------------");
-						System.out.println("구매하신 음료 수 : " + hap1);
-						System.out.println("결제하실 금액 : " + (int) m2.money + "원");
-						System.out.println("누적 포인트 : " + (int) m2.point + " point");
-						System.out.println("구매해주셔서 감사합니다");
-						br.close();
-						System.exit(0);
-						// 위를 출력 후 강제로 act에 숫자 1을 집어넣어
-						// 매장 주문 쪽으로 들어갑니다
-						act = 1;
-						continue;
+				
 					}
 				}
 				// 모든 반복문이 끝난 후 출력되는 클래스 입니다!
@@ -242,12 +231,11 @@ public class Main {
 			System.out.println("결제하실 금액 : " + (int) m1.money + "원");
 			System.out.println("누적 포인트 : " + (int) m1.point + " point");
 			System.out.println("구매해주셔서 감사합니다");
-			br.close();
+			bt.close();
 			System.exit(0);
 			//위를 출력 후 강제로 act에 숫자 1을 집어넣어
 			//매장 주문 쪽으로 들어갑니다
-			act = 1;
-			continue;
+	
 		}
 	}
 }
