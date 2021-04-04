@@ -11,10 +11,14 @@ public class Manager1 extends Main{
 	boolean flag = true;
 	// 총 매출액
 	int money;
+	int money1;
 	double point;
+	double point1;
 	// 횟수 세기
 	int allCoffeeCnt1 = 0, allSmoothieCnt1 = 0, allAdeCnt1 = 0;
 	int coffeeCnt1 = 0, smoothieCnt1 = 0, adeCnt1 = 0;
+	
+	
 	// 객체 생성
 	AllCoffee[] ac1 = new AllCoffee[allCoffeeCnt1];
 	AllSmoothie[] sp1 = new AllSmoothie[allSmoothieCnt1];
@@ -34,10 +38,17 @@ public class Manager1 extends Main{
 		ac1 = new AllCoffee[coffeeCnt1];
 		// 판매 개수 누적하기 -> 전체 판매 개수를 합쳐야 하니까
 		allCoffeeCnt1 += coffeeCnt1;
+		
 
 		int cPoint = (int) (coffeeCnt1 * p.point);
 		point += (p.point * coffeeCnt1);
-		money += (p.price * coffeeCnt1);
+		point1 += (((p.price + 500) * coffeeCnt1));
+		money += ((p.price + 500) * coffeeCnt1);
+		
+		
+
+		
+
 
 		System.out.printf("선택하신 제품 : %s | 구매 수량 : %d | 예상 누적 포인트 : %d", p, coffeeCnt1, cPoint);
 		System.out.println();
@@ -66,7 +77,9 @@ public class Manager1 extends Main{
 
 		int sPoint = (int) (smoothieCnt1 * p.point);
 		point += (p.point * smoothieCnt1);
-		money += (p.price * smoothieCnt1);
+		point1 += (((p.price + 500) * smoothieCnt1));
+		money += ((p.price + 500) * smoothieCnt1);
+
 
 		System.out.printf("선택하신 제품 : %s | 구매 수량 : %d | 예상 누적 포인트 : %d", p, smoothieCnt1, sPoint);
 		System.out.println();
@@ -93,7 +106,9 @@ public class Manager1 extends Main{
 
 		int aPoint = (int) (adeCnt1 * p.point);
 		point += (p.point * adeCnt1);
-		money += (p.price * adeCnt1);
+		point1 += (((p.price + 500) * adeCnt1));
+		money += ((p.price + 500) * adeCnt1);
+
 
 		System.out.printf("선택하신 제품 : %s | 구매 수량 : %d | 예상 누적 포인트 : %d", p, smoothieCnt1, aPoint);
 		System.out.println();
