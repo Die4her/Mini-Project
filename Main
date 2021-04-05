@@ -113,19 +113,10 @@ public class Main {
 						flag = m1.flag;
 						break;
 					} else {continue;}
-				}
-				else {	}
-
-				// 여기는 메인에서 2번을 선택했을 시 출력되는 클래스 입니다.
-				// 아직 구현하지 못한 기능이기 때문에 임시로 작성하였습니다.
+				} else {	}
 
 
-
-				// 위에서 사용자가 입력한 번호를 act가 저장해놨고
-				// switch()에 넣어줬습니다.
-				// act에 따라 case 1,2,3... 이 선택되는것
-
-				// 사용자가 2번을 눌렀다면 실행되는 곳
+				//포장주문
 			case 2:
 				System.out.println();
 				System.out.println("포장주문은 모든 메뉴 500원 추가입니다.");
@@ -197,6 +188,10 @@ public class Main {
 					} else {continue;}
 				} else {	}
 			}
+
+
+
+
 			int hap1 = m2.allCoffeeCnt1 + m2.allAdeCnt1 + m2.allSmoothieCnt1;
 			if(act==1) {
 				System.out.println("-------------------");
@@ -208,19 +203,18 @@ public class Main {
 				System.exit(0);
 			} else {
 				int hap = m1.allCoffeeCnt + m1.allAdeCnt + m1.allSmoothieCnt;
-				if(act==2) {
-					System.out.println("-------------------");
-					System.out.println("구매하신 음료 수 : " + hap);
-					System.out.println("결제하실 금액 : " + (int) m1.money + "원");
-					System.out.println("누적 포인트 : " + (int) m1.point + " point");
-					System.out.println("구매해주셔서 감사합니다");
-					br.close();
-					System.exit(0);
-				}		
-
+				System.out.println("-------------------");
+				System.out.println("구매하신 음료 수 : " + hap);
+				System.out.println("결제하실 금액 : " + (int) m1.money + "원");
+				System.out.println("누적 포인트 : " + (int) m1.point + " point");
+				System.out.println("구매해주셔서 감사합니다");
+				br.close();
+				System.exit(0);
 			}
-
 		}
+
 
 	}
 }
+
+
